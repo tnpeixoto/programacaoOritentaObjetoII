@@ -52,11 +52,11 @@ public class Sistema {
             opcaoMenu1 = ler.nextInt();
             switch(opcaoMenu1){
                 case 1:
-                    System.out.println("Digite o Nome do Ativo:");
+                    System.out.println("Digite o nome da ação:");
                     nome = ler.next();
-                    System.out.println("Digite a Cotacao:");
+                    System.out.println("Digite a cotacao:");
                     ctc = ler.nextDouble();
-                    System.out.println("Digite a precoLucro:");
+                    System.out.println("Digite o preço sobre o lucro:");
                     pl = ler.nextDouble();
                     Acao a = new Acao(nome,ctc,pl);
                     listaAcoes.add(a);
@@ -68,7 +68,7 @@ public class Sistema {
                         pl = listaAcoes.get(i).getPrecoLucro();
                         System.out.println("Código do Ativo:" + nome
                                 + "\t Cotaçao do Ativo:" + ctc
-                                + "\t Preço por Lucro:" + pl );
+                                + "\t Preço sobre Lucro:" + pl );
                     }
                     break;
                 case 3:
