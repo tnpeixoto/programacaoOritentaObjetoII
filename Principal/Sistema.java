@@ -53,7 +53,7 @@ public class Sistema {
             switch(opcaoMenu1){
                 case 1:
                     System.out.println("Digite o nome da ação:");
-                    nome = ler.next();
+                    nome = ler.next().toUpperCase();
                     System.out.println("Digite a cotacao:");
                     ctc = ler.nextDouble();
                     System.out.println("Digite o preço sobre o lucro:");
@@ -62,18 +62,18 @@ public class Sistema {
                     listaAcoes.add(a);
                     break;
                 case 2:
-                    for (int i=0; i< listaAcoes.size(); i++) {
-                        nome = listaAcoes.get(i).getTicker();
-                        ctc = listaAcoes.get(i).getCotacao();
-                        pl = listaAcoes.get(i).getPrecoLucro();
-                        System.out.println("Código do Ativo:" + nome
-                                + "\t Cotaçao do Ativo:" + ctc
-                                + "\t Preço sobre Lucro:" + pl );
+                    for (Acao listaAcoe : listaAcoes) {
+                        nome = listaAcoe.getTicker();
+                        ctc = listaAcoe.getCotacao();
+                        pl = listaAcoe.getPrecoLucro();
+                        System.out.println("Código do açao:" + nome
+                                + "\t Cotaçao do açao:" + ctc
+                                + "\t Preço sobre lucro:" + pl);
                     }
                     break;
                 case 3:
                     System.out.println("Digite o nome do Ativo:");
-                    nome = ler.next();
+                    nome = ler.next().toUpperCase();
                     for (int i=0; i< listaAcoes.size(); i++) {
                         if (nome.contains(listaAcoes.get(i).getTicker())) {
                             do{
@@ -87,7 +87,7 @@ public class Sistema {
                                             switch (opcaoMenu3){
                                                 case 1:
                                                     System.out.println("Digite o novo nome da ação:");
-                                                    nome = ler.next();
+                                                    nome = ler.next().toUpperCase();
                                                     listaAcoes.get(i).setTicker(nome);
                                                     break;
                                                 case 2:
@@ -106,7 +106,12 @@ public class Sistema {
                                         }while(opcaoMenu3 != 0);
                                         break;
                                     case 2:
-                                        listaAcoes.remove(i);
+                                        System.out.println("Deseja excluir acao ?\t" + listaAcoes.get(i).getTicker());
+                                        System.out.println("Digite S para Sim ou N para Não");
+                                        char decisao = ler.next().charAt(0);
+                                        if (decisao == 's' || decisao == 'S'){
+                                            listaAcoes.remove(i);
+                                        }
                                         break;
                                     default:
                                         System.out.println("Opção inválida.");
