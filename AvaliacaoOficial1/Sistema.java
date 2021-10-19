@@ -45,7 +45,7 @@ public class Sistema {
         Scanner ler = new Scanner(System.in);
         ArrayList<Acao> listaAcoes = new ArrayList<>();
         String nome;
-        Double ctc, pl;
+        double ctc, pl;
 
         do{
             menu();
