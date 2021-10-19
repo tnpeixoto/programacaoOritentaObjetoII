@@ -62,13 +62,13 @@ public class Sistema {
                     listaAcoes.add(a);
                     break;
                 case 2:
-                    for (Acao listaAcoe : listaAcoes) {
-                        nome = listaAcoe.getTicker();
-                        ctc = listaAcoe.getCotacao();
-                        pl = listaAcoe.getPrecoLucro();
+                    for (int i=0; i< listaAcoes.size(); i++) {
+                        nome = listaAcoes.get(i).getTicker();
+                        ctc = listaAcoes.get(i).getCotacao();
+                        pl = listaAcoes.get(i).getPrecoLucro();
                         System.out.println("Código do açao:" + nome
                                 + "\t Cotaçao do açao:" + ctc
-                                + "\t Preço sobre lucro:" + pl);
+                                + "\t Preço sobre lucro:" + pl );
                     }
                     break;
                 case 3:
